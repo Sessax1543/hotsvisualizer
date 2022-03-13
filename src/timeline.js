@@ -547,7 +547,7 @@ function drawTimelineHelpers() {
 
 	//labels
 	const loader = new FontLoader();
-	loader.load('../fonts/Roboto_Regular.json',
+	loader.load('./fonts/Roboto_Regular.json',
 		function(font) {
 			const color = 0x000000;
 			const matLite = new THREE.MeshBasicMaterial( {
@@ -612,7 +612,7 @@ function drawLevelLines(offset) {
 		scene.add( levelLine );
 	}
 
-	loader.load('../fonts/Roboto_Regular.json',
+	loader.load('./fonts/Roboto_Regular.json',
 		function(font) {
 			const color = 0x0000ff;
 			const matLite = new THREE.MeshBasicMaterial( {
@@ -648,7 +648,7 @@ function drawLevelLines(offset) {
 		scene.add( levelLine );
 	}
 
-	loader.load('../fonts/Roboto_Regular.json',
+	loader.load('./fonts/Roboto_Regular.json',
 		function(font) {
 			const color = 0xff0000;
 			const matLite = new THREE.MeshBasicMaterial( {
@@ -740,7 +740,7 @@ function drawLevelLines(offset) {
 function drawDeathObjects() {
 	var player_index = 0
 	const textureLoader = new THREE.TextureLoader();
-	const map = textureLoader.load( '../img/graph_icons/death.png' );
+	const map = textureLoader.load( './img/graph_icons/death.png' );
 
 	for (const [team, players] of Object.entries(game_data.TeamPlayerDeaths)) {
 		for (const [player, deaths] of Object.entries(players)) {
@@ -840,8 +840,8 @@ function resetDeathObjectsVisibility() {
 
 function drawStructureObjects() {
 	const textureLoader = new THREE.TextureLoader();
-	const fort = textureLoader.load( '../img/graph_icons/fort.png' );
-	const tower = textureLoader.load('../img/graph_icons/tower.png')
+	const fort = textureLoader.load( './img/graph_icons/fort.png' );
+	const tower = textureLoader.load('./img/graph_icons/tower.png')
 
 	for(var i = 0; i < game_data.TeamStructureDestruction["Team0"].length; i++) {
 		const x = game_data.TeamStructureDestruction["Team0"][i].TimestepPosition.Position.X;
@@ -1020,8 +1020,8 @@ function resetStructureObjectsVisibility() {
 
 function drawObjectiveObjects(offset) {
 	const textureLoader = new THREE.TextureLoader();
-	const obective = textureLoader.load( '../img/graph_icons/objective.png' );
-	const boss = textureLoader.load( '../img/graph_icons/boss.png' )
+	const obective = textureLoader.load( './img/graph_icons/objective.png' );
+	const boss = textureLoader.load( './img/graph_icons/boss.png' )
 
 	for(var i = 0; i < game_data.TeamObjectives["Team0"].length; i++) {
 		var obj = game_data.TeamObjectives["Team0"][i];
@@ -1103,7 +1103,7 @@ function drawObjectiveObjects(offset) {
 }
 
 function drawMap() {
-	const texture = new THREE.TextureLoader().load( '../img/maps/' + game_data.Map + '.png' );
+	const texture = new THREE.TextureLoader().load( './img/maps/' + game_data.Map + '.png' );
 	
 	let mapw, maph;
 	let mapx, mapy;
@@ -1167,33 +1167,33 @@ function createHUDLegend()
 
 	createHUDLegendText(legendGroup, game_data.Players[0].IsWinner ? "Blue Team (Winner):" : "Blue Team:", 10, -55, 0.12); //35 width
 
-	createHUDLegendImage(legendGroup, '../img/hero_icons/' + game_data.Players[0].Character.toLowerCase() + '.png', 35, -105, 40, 40, true, 0);
-	createHUDLegendImage(legendGroup, '../img/hero_icons/' + game_data.Players[1].Character.toLowerCase() + '.png', 95, -105, 40, 40, true, 1);
-	createHUDLegendImage(legendGroup, '../img/hero_icons/' + game_data.Players[2].Character.toLowerCase() + '.png', 155, -105, 40, 40, true, 2);
-	createHUDLegendImage(legendGroup, '../img/hero_icons/' + game_data.Players[3].Character.toLowerCase() + '.png', 215, -105, 40, 40, true, 3);
-	createHUDLegendImage(legendGroup, '../img/hero_icons/' + game_data.Players[4].Character.toLowerCase() + '.png', 275, -105, 40, 40, true, 4);
+	createHUDLegendImage(legendGroup, './img/hero_icons/' + game_data.Players[0].Character.toLowerCase() + '.png', 35, -105, 40, 40, true, 0);
+	createHUDLegendImage(legendGroup, './img/hero_icons/' + game_data.Players[1].Character.toLowerCase() + '.png', 95, -105, 40, 40, true, 1);
+	createHUDLegendImage(legendGroup, './img/hero_icons/' + game_data.Players[2].Character.toLowerCase() + '.png', 155, -105, 40, 40, true, 2);
+	createHUDLegendImage(legendGroup, './img/hero_icons/' + game_data.Players[3].Character.toLowerCase() + '.png', 215, -105, 40, 40, true, 3);
+	createHUDLegendImage(legendGroup, './img/hero_icons/' + game_data.Players[4].Character.toLowerCase() + '.png', 275, -105, 40, 40, true, 4);
 
 	createHUDLegendText(legendGroup, game_data.Players[5].IsWinner ? "Red Team (Winner):" : "Red Team:", 10, -135, 0.12); //35 width
 
-	createHUDLegendImage(legendGroup, '../img/hero_icons/' + game_data.Players[5].Character.toLowerCase() + '.png', 35, -185, 40, 40, true, 5);
-	createHUDLegendImage(legendGroup, '../img/hero_icons/' + game_data.Players[6].Character.toLowerCase() + '.png', 95, -185, 40, 40, true, 6);
-	createHUDLegendImage(legendGroup, '../img/hero_icons/' + game_data.Players[7].Character.toLowerCase() + '.png', 155, -185, 40, 40, true, 7);
-	createHUDLegendImage(legendGroup, '../img/hero_icons/' + game_data.Players[8].Character.toLowerCase() + '.png', 215, -185, 40, 40, true, 8);
-	createHUDLegendImage(legendGroup, '../img/hero_icons/' + game_data.Players[9].Character.toLowerCase() + '.png', 275, -185, 40, 40, true, 9);
+	createHUDLegendImage(legendGroup, './img/hero_icons/' + game_data.Players[5].Character.toLowerCase() + '.png', 35, -185, 40, 40, true, 5);
+	createHUDLegendImage(legendGroup, './img/hero_icons/' + game_data.Players[6].Character.toLowerCase() + '.png', 95, -185, 40, 40, true, 6);
+	createHUDLegendImage(legendGroup, './img/hero_icons/' + game_data.Players[7].Character.toLowerCase() + '.png', 155, -185, 40, 40, true, 7);
+	createHUDLegendImage(legendGroup, './img/hero_icons/' + game_data.Players[8].Character.toLowerCase() + '.png', 215, -185, 40, 40, true, 8);
+	createHUDLegendImage(legendGroup, './img/hero_icons/' + game_data.Players[9].Character.toLowerCase() + '.png', 275, -185, 40, 40, true, 9);
 
 	createHUDLegendText(legendGroup, "Icons:", 10, -220, 0.12);
 	
-	createHUDLegendImage(legendGroup, '../img/graph_icons/death.png', 35, -265, 50, 50, false, -1);
+	createHUDLegendImage(legendGroup, './img/graph_icons/death.png', 35, -265, 50, 50, false, -1);
 	createHUDLegendText(legendGroup, "Hero Death", 70, -260, 0.12);
 
-	createHUDLegendImage(legendGroup, '../img/graph_icons/tower.png', 35, -325, 45, 45, false, -1);
+	createHUDLegendImage(legendGroup, './img/graph_icons/tower.png', 35, -325, 45, 45, false, -1);
 	createHUDLegendText(legendGroup, "Tower", 70, -320, 0.12);
-	createHUDLegendImage(legendGroup, '../img/graph_icons/fort.png', legendw / 2 + 25, -325, 50, 50, false, -1);
+	createHUDLegendImage(legendGroup, './img/graph_icons/fort.png', legendw / 2 + 25, -325, 50, 50, false, -1);
 	createHUDLegendText(legendGroup, "Fort", legendw / 2 + 60, -320, 0.12);
 
-	createHUDLegendImage(legendGroup, '../img/graph_icons/objective.png', 35, -380, 35, 35, false, -1);
+	createHUDLegendImage(legendGroup, './img/graph_icons/objective.png', 35, -380, 35, 35, false, -1);
 	createHUDLegendText(legendGroup, "Objective", 70, -370, 0.12);
-	createHUDLegendImage(legendGroup, '../img/graph_icons/boss.png', legendw / 2 + 25, -380, 140, 70, false, -1);
+	createHUDLegendImage(legendGroup, './img/graph_icons/boss.png', legendw / 2 + 25, -380, 140, 70, false, -1);
 	createHUDLegendText(legendGroup, "Boss", legendw / 2 + 60, -380, 0.12);
 
 	sceneOrtho.add(legendGroup);
@@ -1202,7 +1202,7 @@ function createHUDLegend()
 
 function createHUDLegendText(group, text, xOffset, yOffset, size) {
 	const loader = new FontLoader();
-	loader.load('../fonts/Roboto_Regular.json',
+	loader.load('./fonts/Roboto_Regular.json',
 	function(font) {
 		const color = 0xebebeb;
 		const matLite = new THREE.MeshBasicMaterial( {
@@ -1265,7 +1265,7 @@ function createViewFramesAndHeaders()
 	rightSeparator.position.set(windowWidth / 2, 0, 1);
 
 	const loader = new FontLoader();
-	loader.load('../fonts/Roboto_Regular.json',
+	loader.load('./fonts/Roboto_Regular.json',
 		function(font) {
 			const color = 0x000000;
 			const matLite = new THREE.MeshBasicMaterial( {
@@ -1296,7 +1296,7 @@ function createViewFramesAndHeaders()
 			sceneOrtho.add(mainViewHeader);
 		});
 
-	loader.load('../fonts/Roboto_Regular.json',
+	loader.load('./fonts/Roboto_Regular.json',
 		function(font) {
 			const color = 0x000000;
 			const matLite = new THREE.MeshBasicMaterial( {
@@ -1327,7 +1327,7 @@ function createViewFramesAndHeaders()
 			sceneOrtho.add(topViewHeader);
 		});
 
-	loader.load('../fonts/Roboto_Regular.json',
+	loader.load('./fonts/Roboto_Regular.json',
 		function(font) {
 			const color = 0x000000;
 			const matLite = new THREE.MeshBasicMaterial( {
