@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>HoTS Space-Time Cube Visualization</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/hotsicon.png" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+					<img src="assets/hotsicon.png" width="30" height="30" class="d-inline-block align-top" alt="">
+					Match Visualization Tool
+				</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="visualization.html">Visualization</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header - set the background image for the header in the line below-->
+        <header class="py-5 bg-image-full" style="background-image: url('assets/header.jpg')">
+            <div class="text-center my-5">
+				<div style="height: 50vh"></div>
+            </div>
+        </header>
+        <!-- Content section-->
+        <section class="py-5">
+            <div class="container my-5" style="position: relative;">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8" style="text-align: justify">
+                        <h2>Space-Time Cube Visualization for In-Game Data</h2>
+                        <p class="lead">Visualization Tool Controls</p>
+                        <p class="mb-0"><img src="assets/lmb.png" width="20" height="25" class="d-inline-block align-top" alt=""> LMB: Rotate (Perspective view)</p>
+                        <p class="mb-0"><img src="assets/rmb.png" width="20" height="25" class="d-inline-block align-top" alt=""> RMB: Pan (All views)</p>
+                        <br>
+                        <p class="mb-0">Other controls can be found in the menu at <strong>top right</strong>.</p>
+                        <br>
+                        <p class="lead">In-Game Data</p>
+                        <p class="mb-0">Users can choose from the following options:</p>
+                        <ul>
+                            <li><p class="mb-0">Inspecting one of preloaded matches, the selection will be available in the top navigation bar after switching to the <strong>Visualization Tab</strong>.</p></li>
+                            <li><p class="mb-0">Uploading their own parsed match parsed using the upload button in the Visualization Tab. The parsed match has to be in .json format and has to have special structure. Provided match parser (coming soon!) is modified version of Heroes.ReplayParser available <a href="https://github.com/barrett777/Heroes.ReplayParser" target="_blank">here</a>.</p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Image element - set the background image for the header in the line below-->
+        <div class="py-5 bg-image-full" style="background-image: url('assets/separator.jpg'); position: relative;">
+            <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
+			<a href="https://www.fi.muni.cz/index.html.en" target="_blank">
+				<img style="position: absolute; left: 5vw; top: 7vw" src="assets/fi_logo.svg" width="200" height="200" class="d-inline-block align-top" alt="">
+			</a>
+			<img style="position: absolute; left: 5vw; top: 3vw" src="assets/muni.png" width="200" height="60" class="d-inline-block align-top" alt="">
+			<div style="height: 30vh"></div>
+        </div>
+        <!-- Content section-->
+        <section class="py-5">
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8" style="text-align: justify">
+                        <h2>About</h2>
+                        <p class="mb-0">
+                            Tool for <a href="https://heroesofthestorm.com/en-us/" target="_blank">Heroes of the Storm</a> match visualization that uses technique called <strong>Space-Time Cube Visualization</strong>.
+                        </p>
+
+                        <img src="assets/stc.png" style="width: 49%;">
+                        <img src="assets/stc2.png" style="width: 50%;">
+
+                        <p class="mb-0">
+                            Documentation containing additional information about the visualization technique and also an in-depth guide for the tool usage will be attached soon in the form of master's thesis! :).
+                        </p>
+                        <br>
+                        <p class="lead">Supported Game Modes</p>
+                        <ul>
+                            <li><p class="mb-0">Ranked 5v5</p></li>
+                            <li><p class="mb-0">Quickmatch 5v5</p></li>
+                        </ul>
+
+                        <p class="lead">Unsupported Game Modes</p>
+                        <ul>
+                            <li><p class="mb-0">ARAM 5v5 (can be added in the future)</p></li>
+                            <li><p class="mb-0">vs AI 5v5</p></li>
+                        </ul>
+
+                        <p class="lead">Authors</p>
+                        <p class="mb-0">Adam Šufliarsky</p>
+                        <p class="mb-0">Simone Kriglstein</p>
+                        <p class="mb-0">Günter Wallner</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="py-2 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Heroes of the Storm Match Visualization Tool 2022</p></div>
+        </footer>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+</html>
