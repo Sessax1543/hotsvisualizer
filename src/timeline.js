@@ -1893,7 +1893,7 @@ function resetEverything() {
 
 
 async function getMatch(name) {
-	return await fetch('/matches/' + name + '.json')
+	return await fetch('./matches/' + name + '.json')
   					.then(response => response.json())
  					.then(responseJson => {return responseJson});
 }
