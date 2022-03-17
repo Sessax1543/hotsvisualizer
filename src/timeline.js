@@ -401,9 +401,10 @@ function generateStorylines() {
 				const line = new Line2( geometry, material );
 				const line_smooth = new Line2( geometry_smooth, material );
 
+				line.visible = false;
 				player_lines[i].push(line);
 
-				line_smooth.visible = false;
+				//line_smooth.visible = false;
 				player_lines_smooth[i].push(line_smooth);
 
 				scene.add( line );
@@ -1489,12 +1490,12 @@ function showSmoothLines(transparency) {
 
 function switchRawSmoothLines(lineType, transparency) {
 	switch ( lineType ) {
-		case 0:
+		case 1:
 			showRawLines(transparency);
 			updateDeathsTransparency(transparency);
 
 			break;
-		case 1:
+		case 0:
 			showSmoothLines(transparency);
 			updateDeathsTransparency(transparency);
 
@@ -1585,6 +1586,10 @@ function initGUI() {
 
 		sync: false
 	};
+
+	gui.add(param, 'legend').name("Legend").onChange( function ( val ) {
+		legendGroup.visible = val;
+	});
 
 	const heroLines = gui.addFolder("Hero Lines");
 
@@ -1755,11 +1760,11 @@ function initGUI() {
 	changeUIElementFontColor(p10, "#000000");
 
 	const lineSettings = gui.addFolder("Line Settings");
-	lineSettings.add(param, 'lineType', { Raw: 0, Smooth: 1 }).name("Line Type").onChange( function ( val ) {
+	lineSettings.add(param, 'lineType', { Smooth: 0, Raw: 1 }).name("Line Type").onChange( function ( val ) {
 		switchRawSmoothLines(val, param.filteredLineTransparency);
 	});
 
-	lineSettings.add(param, 'filteredLineTransparency', 0, 1, 0.1).name("Filtered Line Transparency").onChange( function ( val ) {
+	lineSettings.add(param, 'filteredLineTransparency', 0, 1, 0.1).name("Unchecked Player Transparency").onChange( function ( val ) {
 		filteredLinesTransparency = val;
 		switchRawSmoothLines(param.lineType, val);;
 	});
@@ -1780,10 +1785,6 @@ function initGUI() {
 
 	graphHelpers.add(param, 'mapPosition', 0, game_data.GameLengthSeconds, 1).name("Map Position (seconds)").onChange( function ( val ) {
 		map.position.z = -val;
-	});
-
-	graphHelpers.add(param, 'legend').name("Legend").onChange( function ( val ) {
-		legendGroup.visible = val;
 	});
 
 	const viewControls = gui.addFolder("View Controls");
