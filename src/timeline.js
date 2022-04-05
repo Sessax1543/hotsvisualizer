@@ -1921,6 +1921,10 @@ document.querySelector('#match4').addEventListener('click', () => {
 	preloadedMatch('warhead');
 });
 
+document.querySelector('#match5').addEventListener('click', () => {
+	preloadedMatch('lostcavern_aram');
+});
+
 
 // ======= UPLOAD HANDLING =======
 
