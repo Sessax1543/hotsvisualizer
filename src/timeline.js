@@ -1137,6 +1137,13 @@ function drawMap() {
 			mapx = game_data.MapSize.X / 2;
 			mapy = (game_data.MapSize.Y / 2) - 15;
 			break;
+		case "Lost Cavern":
+			mapw = game_data.MapSize.X;
+			maph = game_data.MapSize.Y - 20;
+
+			mapx = game_data.MapSize.X / 2;
+			mapy = (game_data.MapSize.Y / 2) - 15;
+			break;
 	}
 
 	const geometry = new THREE.PlaneGeometry( mapw, maph ); // might need scale tuning
