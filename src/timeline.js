@@ -1109,19 +1109,26 @@ function drawMap() {
 	let mapw, maph;
 	let mapx, mapy;
 	switch(game_data.Map) {
-		case "Tomb of the Spider Queen":
-			mapw = game_data.MapSize.X;
-			maph = game_data.MapSize.Y - 45;
+		case "Alterac Pass":
+			mapw = game_data.MapSize.X + 20;
+			maph = game_data.MapSize.Y + 45;
 
-			mapx = game_data.MapSize.X / 2;
-			mapy = (game_data.MapSize.Y / 2) - 10;
-			break;
-		case "Warhead Junction":
-			mapw = game_data.MapSize.X - 10;
-			maph = game_data.MapSize.Y - 25;
-
-			mapx = game_data.MapSize.X / 2;
+			mapx = (game_data.MapSize.X / 2) - 4;
 			mapy = (game_data.MapSize.Y / 2) - 5;
+			break;
+		case "Battlefield of Eternity":
+			mapw = game_data.MapSize.X - 40;
+			maph = game_data.MapSize.Y - 60;
+
+			mapx = game_data.MapSize.X / 2;
+			mapy = (game_data.MapSize.Y / 2);
+			break;
+		case "Blackheart's Bay":
+			mapw = game_data.MapSize.X - 20;
+			maph = game_data.MapSize.Y;
+
+			mapx = (game_data.MapSize.X / 2) - 5;
+			mapy = (game_data.MapSize.Y / 2);
 			break;
 		case "Braxis Holdout":
 			mapw = game_data.MapSize.X;
@@ -1130,6 +1137,62 @@ function drawMap() {
 			mapx = game_data.MapSize.X / 2;
 			mapy = (game_data.MapSize.Y / 2);
 			break;
+		case "Cursed Hollow":
+			mapw = game_data.MapSize.X - 10;
+			maph = game_data.MapSize.Y - 40;
+
+			mapx = (game_data.MapSize.X / 2) - 5;
+			mapy = (game_data.MapSize.Y / 2);
+			break;
+		case "Dragon Shire":
+			mapw = game_data.MapSize.X - 10;
+			maph = game_data.MapSize.Y;
+
+			mapx = (game_data.MapSize.X / 2) - 5;
+			mapy = (game_data.MapSize.Y / 2) - 10;
+			break;
+		case "Garden of Terror":
+			mapw = game_data.MapSize.X - 10;
+			maph = game_data.MapSize.Y - 60;
+
+			mapx = (game_data.MapSize.X / 2) - 5;
+			mapy = (game_data.MapSize.Y / 2) + 5;
+			break;
+		case "Hanamura Temple": //still needs check
+			mapw = game_data.MapSize.X;
+			maph = game_data.MapSize.Y - 20;
+
+			mapx = game_data.MapSize.X / 2;
+			mapy = (game_data.MapSize.Y / 2) - 15;
+			break;
+		case "Infernal Shrines":
+			mapw = game_data.MapSize.X - 10;
+			maph = game_data.MapSize.Y - 40;
+
+			mapx = game_data.MapSize.X / 2;
+			mapy = (game_data.MapSize.Y / 2) - 5;
+			break;
+		case "Sky Temple":
+			mapw = game_data.MapSize.X - 15;
+			maph = game_data.MapSize.Y - 40;
+
+			mapx = game_data.MapSize.X / 2;
+			mapy = (game_data.MapSize.Y / 2);
+			break;
+		case "Tomb of the Spider Queen":
+			mapw = game_data.MapSize.X;
+			maph = game_data.MapSize.Y - 45;
+
+			mapx = game_data.MapSize.X / 2;
+			mapy = (game_data.MapSize.Y / 2) - 10;
+			break;
+		case "Towers of Doom":
+			mapw = game_data.MapSize.X - 30;
+			maph = game_data.MapSize.Y - 60;
+
+			mapx = (game_data.MapSize.X / 2) - 5;
+			mapy = (game_data.MapSize.Y / 2) - 15;
+			break;
 		case "Volskaya Foundry":
 			mapw = game_data.MapSize.X;
 			maph = game_data.MapSize.Y - 20;
@@ -1137,12 +1200,19 @@ function drawMap() {
 			mapx = game_data.MapSize.X / 2;
 			mapy = (game_data.MapSize.Y / 2) - 15;
 			break;
-		case "Lost Cavern":
-			mapw = game_data.MapSize.X;
-			maph = game_data.MapSize.Y - 20;
+		case "Warhead Junction":
+			mapw = game_data.MapSize.X - 10;
+			maph = game_data.MapSize.Y - 25;
 
 			mapx = game_data.MapSize.X / 2;
-			mapy = (game_data.MapSize.Y / 2) - 15;
+			mapy = (game_data.MapSize.Y / 2) - 5;
+			break;
+		case "Lost Cavern": // ARAM
+			mapw = game_data.MapSize.X - 25;
+			maph = game_data.MapSize.Y - 135;
+
+			mapx = game_data.MapSize.X / 2;
+			mapy = game_data.MapSize.Y / 2;
 			break;
 	}
 
@@ -1912,23 +1982,60 @@ async function preloadedMatch(name) {
 	$("#jsonForm").val('');
 }
 
+
 document.querySelector('#match1').addEventListener('click', () => {
-	preloadedMatch('braxis');
+	preloadedMatch('alterac');
 });
 
 document.querySelector('#match2').addEventListener('click', () => {
-	preloadedMatch('tomb');
+	preloadedMatch('eternity');
 });
 
 document.querySelector('#match3').addEventListener('click', () => {
-	preloadedMatch('volskaya');
+	preloadedMatch('blackheart');
 });
 
 document.querySelector('#match4').addEventListener('click', () => {
-	preloadedMatch('warhead');
+	preloadedMatch('braxis');
 });
 
 document.querySelector('#match5').addEventListener('click', () => {
+	preloadedMatch('cursed');
+});
+
+document.querySelector('#match6').addEventListener('click', () => {
+	preloadedMatch('dragon');
+});
+
+document.querySelector('#match7').addEventListener('click', () => {
+	preloadedMatch('garden');
+});
+
+document.querySelector('#match8').addEventListener('click', () => {
+	preloadedMatch('shrines');
+});
+
+document.querySelector('#match9').addEventListener('click', () => {
+	preloadedMatch('sky');
+});
+
+document.querySelector('#match10').addEventListener('click', () => {
+	preloadedMatch('tomb');
+});
+
+document.querySelector('#match11').addEventListener('click', () => {
+	preloadedMatch('towers');
+});
+
+document.querySelector('#match12').addEventListener('click', () => {
+	preloadedMatch('volskaya');
+});
+
+document.querySelector('#match13').addEventListener('click', () => {
+	preloadedMatch('warhead');
+});
+
+document.querySelector('#match14').addEventListener('click', () => {
 	preloadedMatch('lostcavern_aram');
 });
 
