@@ -1982,7 +1982,7 @@ async function preloadedMatch(name) {
 	$("#jsonForm").val('');
 }
 
-
+/*
 document.querySelector('#match1').addEventListener('click', () => {
 	preloadedMatch('alterac');
 });
@@ -2038,7 +2038,24 @@ document.querySelector('#match13').addEventListener('click', () => {
 document.querySelector('#match14').addEventListener('click', () => {
 	preloadedMatch('lostcavern_aram');
 });
+*/
 
+/* RESEARCH FILTERED MATCHES */
+document.querySelector('#match2').addEventListener('click', () => {
+	preloadedMatch('eternity');
+});
+
+document.querySelector('#match3').addEventListener('click', () => {
+	preloadedMatch('blackheart');
+});
+
+document.querySelector('#match5').addEventListener('click', () => {
+	preloadedMatch('cursed');
+});
+
+document.querySelector('#match11').addEventListener('click', () => {
+	preloadedMatch('towers');
+});
 
 // ======= UPLOAD HANDLING =======
 
