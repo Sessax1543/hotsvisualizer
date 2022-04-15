@@ -1950,6 +1950,9 @@ function resetContainers() {
 	subgraph = [];
 	
 	graphHelpers = [];
+
+	legendGroup.visible = true;
+	topSideSyncMode = false;
 }
 
 // ======= PREUPLOADED MATCHES =======
