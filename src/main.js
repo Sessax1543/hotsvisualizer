@@ -905,12 +905,12 @@ function drawMap() {
 			mapx = (gameData.MapSize.X / 2) - 5;
 			mapy = (gameData.MapSize.Y / 2) + 5;
 			break;
-		case "Hanamura Temple": //still needs check
-			mapw = gameData.MapSize.X;
-			maph = gameData.MapSize.Y - 20;
+		case "Hanamura Temple":
+			mapw = gameData.MapSize.X - 10;
+			maph = gameData.MapSize.Y - 60;
 
 			mapx = gameData.MapSize.X / 2;
-			mapy = (gameData.MapSize.Y / 2) - 15;
+			mapy = (gameData.MapSize.Y / 2);
 			break;
 		case "Infernal Shrines":
 			mapw = gameData.MapSize.X - 10;
