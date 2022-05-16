@@ -14,7 +14,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 var gameData;
 var dataProcessed = false;
 
-let renderer, rendererTop, rendererSide, scene;
+let renderer, rendererTop, rendererBottom, scene;
 var renderers = [];
 
 let windowWidth = document.getElementById( 'container' ).offsetWidth - 2;
@@ -22,7 +22,7 @@ let windowHeight = document.getElementById( 'container' ).offsetHeight - 2;
 
 const canvas = document.getElementById( 'canvas' );
 const canvasTop = document.getElementById( 'canvasTop' );
-const canvasSide = document.getElementById( 'canvasSide' );
+const canvasBottom = document.getElementById( 'canvasBottom' );
 
 let playerLines = [
 	[], //p1
@@ -166,11 +166,11 @@ function init() {
 	renderer.setClearColor( 0xffffff, 0);
 	renderers.push(renderer);
 
-	rendererSide = new THREE.WebGLRenderer({antialias: true, alpha: true, canvas: canvasSide});
-	rendererSide.setPixelRatio(window.devicePixelRatio);
-	rendererSide.setSize(windowWidth / 2, windowHeight / 2);
-	rendererSide.setClearColor( 0xffffff, 0);
-	renderers.push(rendererSide);
+	rendererBottom = new THREE.WebGLRenderer({antialias: true, alpha: true, canvas: canvasBottom});
+	rendererBottom.setPixelRatio(window.devicePixelRatio);
+	rendererBottom.setSize(windowWidth / 2, windowHeight / 2);
+	rendererBottom.setClearColor( 0xffffff, 0);
+	renderers.push(rendererBottom);
 	
 	rendererTop = new THREE.WebGLRenderer({antialias: true, alpha: true, canvas: canvasTop});
 	rendererTop.setPixelRatio(window.devicePixelRatio);
@@ -249,9 +249,9 @@ function render() {
 
 function initViews() {
 	//Eye position setup
-	views[0].eye = [ 300, 350, 250 ];
-	views[1].eye = [gameData.MapSize.X / 2, 420, 0];
-	views[2].eye = [690, gameData.MapSize.Y / 2, 0];
+	views[0].eye = [ 300, 350, 250 ]; //perspective
+	views[1].eye = [gameData.MapSize.X / 2, 420, 0]; //top view
+	views[2].eye = [690, gameData.MapSize.Y / 2, 0]; //side view
 
 
 	for ( let i = 0; i < views.length; i++ ) {
@@ -340,7 +340,7 @@ function updateSize() {
 
 		renderer.setSize( windowWidth / 2, windowHeight );
 		rendererTop.setSize( windowWidth / 2, windowHeight / 2);
-		rendererSide.setSize( windowWidth / 2, windowHeight / 2);
+		rendererBottom.setSize( windowWidth / 2, windowHeight / 2);
 		rendererHUD.setSize(windowWidth, windowHeight);
 	}
 }

@@ -25,7 +25,7 @@ html body {
     grid-area: t;
 }
 
-#canvasSide {
+#canvasBottom {
     grid-area: s;
 }
 
